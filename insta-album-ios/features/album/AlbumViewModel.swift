@@ -39,11 +39,9 @@ class AlbumViewModel: BaseViewModel {
         
         loadMorePublisher.withLatestFrom(Observable.combineLatest(loadMorePublisher, mediasPublisher, nextTokenPublisher)).bind { [weak self] (row, currentMedias, nextToken) in
             guard let self = self else { return }
-            
             if row >= currentMedias.count - 1 && !nextToken.isEmpty{
                 instagramService.nextPageAlbum(nextToken: nextToken) { (mediasObservable) in
                     mediasObservable.subscribe(onNext: { (medias, nextToken) in
-                        // 붙여넣기
                         self.mediasPublisher.onNext(currentMedias + medias)
                         self.nextTokenPublisher.onNext(nextToken)
                     }, onError: { (error) in

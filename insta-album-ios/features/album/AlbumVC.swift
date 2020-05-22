@@ -68,5 +68,14 @@ extension AlbumVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout 
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         viewModel.input.loadMore.onNext(indexPath.row)
+        if let albumCell = cell as? AlbumCell {
+            albumCell.player?.play()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if let albumCell = cell as? AlbumCell {
+            albumCell.player?.pause()
+        }
     }
 }
