@@ -5,14 +5,11 @@ import RxCocoa
 class AlbumVC: BaseVC {
     
     private lazy var albumView = AlbumView(frame: self.view.frame)
+    private var viewModel = AlbumViewModel(instagramService: InstagramServices(),
+                                           userDefaults: UserDefaultsUtils())
     
-    private var media: [Media] = []
-    private var currentIndex = 0
-    
-    static func instance(media: [Media]) -> AlbumVC {
-        return AlbumVC(nibName: nil, bundle: nil).then {
-            $0.media = media
-        }
+    static func instance() -> AlbumVC {
+        return AlbumVC(nibName: nil, bundle: nil)
     }
     
     override func viewDidLoad() {
@@ -21,7 +18,8 @@ class AlbumVC: BaseVC {
         view = albumView
         
         setupNavigation()
-        startSlide()
+        setupCollectionView()
+        viewModel.fetchAlbum()
     }
     
     override func bindEvent() {
@@ -30,6 +28,18 @@ class AlbumVC: BaseVC {
             self.navigationController?.isNavigationBarHidden = false
             self.navigationController?.popViewController(animated: true)
         }.disposed(by: disposeBag)
+    }
+    
+    override func bindViewModel() {
+        viewModel.output.medias.bind(to: albumView.collectionView.rx.items(cellIdentifier: AlbumCell.registerId, cellType: AlbumCell.self)) { row, media, cell in
+            cell.bind(media: media)
+        }.disposed(by: disposeBag)
+        viewModel.output.showAlert.bind { [weak self] (title, message) in
+            guard let self = self else { return }
+            AlertViewUtil.show(vc: self, title: title, message: message)
+        }.disposed(by: disposeBag)
+        viewModel.output.showLoading.bind(onNext: albumView.showLoading(isShow:))
+            .disposed(by: disposeBag)
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -44,20 +54,19 @@ class AlbumVC: BaseVC {
         navigationController?.isNavigationBarHidden = true
     }
     
-    private func startSlide() {
-        Observable<Int>.timer(.seconds(0), period: .seconds(3), scheduler: MainScheduler.instance).bind { (_) in
-            self.showNextPhoto()
-        }.disposed(by: disposeBag)
+    private func setupCollectionView() {
+        albumView.collectionView.register(AlbumCell.self, forCellWithReuseIdentifier: AlbumCell.registerId)
+        albumView.collectionView.rx.setDelegate(self)
+            .disposed(by: disposeBag)
+    }
+}
+
+extension AlbumVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
     }
     
-    private func showNextPhoto() {
-        let currentMedia = media[currentIndex]
-        
-        albumView.bind(media: currentMedia)
-        if currentIndex + 1 == media.count {
-            currentIndex = 0
-        } else {
-            currentIndex += 1
-        }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        viewModel.input.loadMore.onNext(indexPath.row)
     }
 }

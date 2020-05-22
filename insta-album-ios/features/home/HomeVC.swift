@@ -55,7 +55,7 @@ class HomeVC: BaseVC {
     
     private func showAlbumMode(medias: [Media]) {
         if (!medias.isEmpty) {
-            let controller = AlbumVC.instance(media: medias).then {
+            let controller = AlbumVC.instance().then {
                 $0.hidesBottomBarWhenPushed = true
             }
             
