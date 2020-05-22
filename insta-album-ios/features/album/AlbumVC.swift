@@ -43,6 +43,11 @@ class AlbumVC: BaseVC {
         }.disposed(by: disposeBag)
         viewModel.output.showLoading.bind(onNext: albumView.showLoading(isShow:))
             .disposed(by: disposeBag)
+        viewModel.output.showNext.bind { [weak self] (index) in
+            guard let self = self else { return }
+            let indexPath = IndexPath(row: index, section: 0)
+            self.albumView.collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
+        }.disposed(by: disposeBag)
     }
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
