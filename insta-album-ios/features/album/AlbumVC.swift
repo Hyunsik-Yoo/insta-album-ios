@@ -8,8 +8,10 @@ class AlbumVC: BaseVC {
     private var viewModel = AlbumViewModel(instagramService: InstagramServices(),
                                            userDefaults: UserDefaultsUtils())
     
-    static func instance() -> AlbumVC {
-        return AlbumVC(nibName: nil, bundle: nil)
+    static func instance() -> UINavigationController {
+        let controller = AlbumVC(nibName: nil, bundle: nil)
+        
+        return UINavigationController(rootViewController: controller)
     }
     
     override func viewDidLoad() {
@@ -17,17 +19,18 @@ class AlbumVC: BaseVC {
         
         view = albumView
         
-        setupNavigation()
         setupCollectionView()
         viewModel.fetchAlbum()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigation()
+    }
+    
     override func bindEvent() {
-        albumView.backBtn.rx.tap.bind { [weak self] (_) in
-            guard let self = self else { return }
-            self.navigationController?.isNavigationBarHidden = false
-            self.navigationController?.popViewController(animated: true)
-        }.disposed(by: disposeBag)
+        albumView.totalBtn.rx.tap.bind(onNext: goToHome)
+            .disposed(by: disposeBag)
     }
     
     override func bindViewModel() {
@@ -58,6 +61,10 @@ class AlbumVC: BaseVC {
         albumView.collectionView.register(AlbumCell.self, forCellWithReuseIdentifier: AlbumCell.registerId)
         albumView.collectionView.rx.setDelegate(self)
             .disposed(by: disposeBag)
+    }
+    
+    private func goToHome() {
+        navigationController?.pushViewController(HomeVC.instance(), animated: true)
     }
 }
 

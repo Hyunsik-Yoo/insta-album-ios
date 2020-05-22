@@ -3,8 +3,8 @@ import AVKit
 
 class AlbumView: BaseView {
     
-    let backBtn = UIButton().then {
-        $0.setTitle("뒤로가기", for: .normal)
+    let totalBtn = UIButton().then {
+        $0.setTitle("전체보기", for: .normal)
         $0.setTitleColor(.white, for: .normal)
     }
     
@@ -22,12 +22,12 @@ class AlbumView: BaseView {
     
     override func setup() {
         backgroundColor = .black
-        addSubViews(collectionView, backBtn)
+        addSubViews(collectionView, totalBtn)
     }
     
     override func bindConstraints() {
-        backBtn.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(20)
+        totalBtn.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-20)
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
         }
         

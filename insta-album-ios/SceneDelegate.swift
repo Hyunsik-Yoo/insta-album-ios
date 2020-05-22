@@ -57,6 +57,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = HomeVC.instance()
         window?.makeKeyAndVisible()
     }
+    
+    func goToAlbum() {
+        window?.rootViewController = AlbumVC.instance()
+        window?.makeKeyAndVisible()
+    }
 
 }
 

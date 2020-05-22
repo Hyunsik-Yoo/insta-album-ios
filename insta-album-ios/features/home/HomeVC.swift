@@ -6,9 +6,8 @@ class HomeVC: BaseVC {
     private var viewModel = HomeViewModel(instagramService: InstagramServices(),
                                           userDefaults: UserDefaultsUtils())
     
-    static func instance() -> UINavigationController {
-        let controller = HomeVC(nibName: nil, bundle: nil)
-        return UINavigationController(rootViewController: controller)
+    static func instance() -> HomeVC {
+        return HomeVC(nibName: nil, bundle: nil)
     }
     
     override func viewDidLoad() {
@@ -33,18 +32,10 @@ class HomeVC: BaseVC {
             .disposed(by: disposeBag)
     }
     
-    override func bindEvent() {
-        // 앨범 모드 실행
-        navigationItem.leftBarButtonItem?.rx.tap.bind(to: viewModel.input.tapAlbumMode)
-            .disposed(by: disposeBag)
-    }
-    
     private func setupNavigation() {
         title = "인스타 앨범"
         
-        let albumBtn = UIBarButtonItem(title: "앨범재생", style: .plain, target: self, action: nil)
-        
-        navigationItem.leftBarButtonItem = albumBtn
+        self.navigationController?.isNavigationBarHidden = false
     }
     
     private func setupCollectionView() {
