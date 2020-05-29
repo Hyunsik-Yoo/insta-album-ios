@@ -46,7 +46,9 @@ class AlbumVC: BaseVC {
             .disposed(by: disposeBag)
         
         // ControllerView
-        controllerView.totalBtn.rx.tap.bind(onNext: goToHome)
+        controllerView.totalBtn.rx.tap.bind(onNext: showHome)
+            .disposed(by: disposeBag)
+        controllerView.settingBtn.rx.tap.bind(onNext: showSetting)
             .disposed(by: disposeBag)
     }
     
@@ -98,8 +100,12 @@ class AlbumVC: BaseVC {
             .disposed(by: disposeBag)
     }
     
-    private func goToHome() {
-        navigationController?.pushViewController(HomeVC.instance(), animated: true)
+    private func showHome() {
+        self.present(HomeVC.instance(), animated: true, completion: nil)
+    }
+    
+    private func showSetting() {
+        self.present(SettingVC.instance(), animated: true, completion: nil)
     }
 }
 

@@ -6,6 +6,7 @@ protocol InstagramServiceProtocol {
     func requestLongLiveToken(token: String, completion: @escaping ((Observable<LongLiveToken>) -> Void))
     func fetchAlbum(token: String, completion: @escaping ((Observable<([Media], String)>) -> Void))
     func nextPageAlbum(nextToken: String, completion: @escaping ((Observable<([Media], String)>) -> Void))
+    func getMyInfo(token: String, completion: @escaping ((Observable<InstaUser>) -> Void))
 }
 
 struct InstagramServices: InstagramServiceProtocol {
@@ -92,6 +93,26 @@ struct InstagramServices: InstagramServiceProtocol {
                     }
                 } else {
                     let error = CommonError(desc: "Instagram response mapping error")
+                    completion(Observable.error(error))
+                }
+            } else {
+                let error = CommonError(desc: "value is nil")
+                completion(Observable.error(error))
+            }
+        }
+    }
+    
+    func getMyInfo(token: String, completion: @escaping ((Observable<InstaUser>) -> Void)) {
+        let url = "https://graph.instagram.com/me"
+        let headers = HTTPUtils.jsonHeader()
+        let params: [String: Any] = ["fields": "username", "access_token": token]
+        
+        Alamofire.request(url, method: .get, parameters: params, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
+            if let value = response.value {
+                if let instaUser: InstaUser = JsonUtils.toJson(object: value) {
+                    completion(Observable.just(instaUser))
+                } else {
+                    let error = CommonError(desc: "serialization error")
                     completion(Observable.error(error))
                 }
             } else {
