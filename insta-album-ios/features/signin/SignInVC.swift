@@ -17,7 +17,7 @@ class SignInVC: BaseVC {
     }
     
     override func bindViewModel() {
-        viewModel.output.goToHome.bind(onNext: goToHome)
+        viewModel.output.goToHome.bind(onNext: goToAlbum)
         .disposed(by: disposeBag)
     }
     
@@ -33,16 +33,16 @@ class SignInVC: BaseVC {
         present(instaSignInVC, animated: true, completion: nil)
     }
     
-    private func goToHome() {
+    private func goToAlbum() {
         if let sceneDelegate = UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate {
-            sceneDelegate.goToHome()
+            sceneDelegate.goToAlbum()
         }
     }
 }
 
 extension SignInVC: InstaSignInDelegate {
     func onDismiss() {
-        self.goToHome()
+        self.goToAlbum()
     }
 }
 

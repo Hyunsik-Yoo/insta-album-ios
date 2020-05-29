@@ -3,42 +3,36 @@ import AVKit
 
 class AlbumView: BaseView {
     
-    let backBtn = UIButton().then {
-        $0.setTitle("뒤로가기", for: .normal)
+    let totalBtn = UIButton().then {
+        $0.setTitle("전체보기", for: .normal)
         $0.setTitleColor(.white, for: .normal)
     }
     
-    let imageView = UIImageView().then {
+    let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout()).then {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        
+        $0.collectionViewLayout = layout
         $0.backgroundColor = .black
-        $0.contentMode = .scaleAspectFit
+        $0.isPagingEnabled = true
     }
-    
-    let avPlayer = AVPlayer()
     
     
     override func setup() {
         backgroundColor = .black
-        addSubViews(imageView, backBtn)
+        addSubViews(collectionView, totalBtn)
     }
     
     override func bindConstraints() {
-        backBtn.snp.makeConstraints { (make) in
-            make.left.equalToSuperview().offset(20)
+        totalBtn.snp.makeConstraints { (make) in
+            make.right.equalToSuperview().offset(-20)
             make.top.equalTo(safeAreaLayoutGuide).offset(20)
         }
         
-        imageView.snp.makeConstraints { (make) in
+        collectionView.snp.makeConstraints { (make) in
             make.edges.equalTo(0)
         }
-    }
-    
-    func bind(media: Media) {
-        UIView.transition(with: imageView, duration: 1, options: .transitionCrossDissolve, animations: {
-            if let thumbnail = media.thumbnail_url {
-                self.imageView.setImage(urlString: thumbnail)
-            } else {
-                self.imageView.setImage(urlString: media.media_url)
-            }
-        }, completion: nil)
-    }
+    }    
 }
