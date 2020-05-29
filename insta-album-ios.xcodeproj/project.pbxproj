@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4DF227FDD47886208A6798B4 /* Pods_insta_album_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD76EFE9AC1F918DD25FEAF /* Pods_insta_album_ios.framework */; };
+		6E0877422480A22200BCF155 /* Ghanachocolate.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E0877412480A22200BCF155 /* Ghanachocolate.otf */; };
 		6E163A5F247648B200FED2E3 /* InstagramResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E163A5E247648B200FED2E3 /* InstagramResponse.swift */; };
 		6E163A612476491E00FED2E3 /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E163A602476491E00FED2E3 /* Paging.swift */; };
 		6E163A632476494B00FED2E3 /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E163A622476494B00FED2E3 /* Cursor.swift */; };
@@ -56,6 +57,7 @@
 		0B5D8C6B5B517129205CC3DA /* Pods-instaAlbum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaAlbum.debug.xcconfig"; path = "Target Support Files/Pods-instaAlbum/Pods-instaAlbum.debug.xcconfig"; sourceTree = "<group>"; };
 		122127DAB119577B11BF6E56 /* Pods-insta-album-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta-album-ios.debug.xcconfig"; path = "Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		4AD76EFE9AC1F918DD25FEAF /* Pods_insta_album_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_insta_album_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E0877412480A22200BCF155 /* Ghanachocolate.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ghanachocolate.otf; sourceTree = "<group>"; };
 		6E163A5E247648B200FED2E3 /* InstagramResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramResponse.swift; sourceTree = "<group>"; };
 		6E163A602476491E00FED2E3 /* Paging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
 		6E163A622476494B00FED2E3 /* Cursor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cursor.swift; sourceTree = "<group>"; };
@@ -141,6 +143,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		6E08773F2480A20900BCF155 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				6E0877402480A20E00BCF155 /* font */,
+			);
+			path = resources;
+			sourceTree = "<group>";
+		};
+		6E0877402480A20E00BCF155 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				6E0877412480A22200BCF155 /* Ghanachocolate.otf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		6E163A6424764D7F00FED2E3 /* album */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,6 +191,7 @@
 		6E3E57562474ECAA006DA85E /* insta-album-ios */ = {
 			isa = PBXGroup;
 			children = (
+				6E08773F2480A20900BCF155 /* resources */,
 				6E5B0F01247525BB00AFC621 /* modal */,
 				6E5B0EFC2475245700AFC621 /* utils */,
 				6E5B0EF92475222400AFC621 /* services */,
@@ -337,6 +356,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E3E57642474ECAD006DA85E /* LaunchScreen.storyboard in Resources */,
+				6E0877422480A22200BCF155 /* Ghanachocolate.otf in Resources */,
 				6E3E57612474ECAD006DA85E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
