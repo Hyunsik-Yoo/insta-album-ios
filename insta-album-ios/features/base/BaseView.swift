@@ -6,12 +6,7 @@ class BaseView: UIView {
     let disposeBag = DisposeBag()
     
     private let loadingView = UIActivityIndicatorView().then {
-        if #available(iOS 13.0, *) {
-            $0.style = .large
-        } else {
-            // Fallback on earlier versions
-            $0.style = .gray
-        }
+        $0.style = .large
         $0.hidesWhenStopped = true
     }
     
