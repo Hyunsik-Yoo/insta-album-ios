@@ -2,6 +2,11 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string>Ghanachocolate.otf</string>
+		<string></string>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -19,10 +24,10 @@
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
-			<key>CFBundleTypeRole</key>
-			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
-			<array/>
+			<array>
+				<string>fb2732077073687263</string>
+			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
@@ -65,18 +70,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>CFBundleURLTypes</key>
-    <array>
-      <dict>
-      <key>CFBundleURLSchemes</key>
-      <array>
-        <string>fb2732077073687263</string>
-      </array>
-      </dict>
-    </array>
-    <key>FacebookAppID</key>
-    <string>2732077073687263</string>
-    <key>FacebookDisplayName</key>
-    <string>인스타앨범</string>
+	<key>FacebookAppID</key>
+	<string>2732077073687263</string>
+	<key>FacebookDisplayName</key>
+	<string>인스타앨범</string>
 </dict>
 </plist>
