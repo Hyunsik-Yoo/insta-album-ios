@@ -80,6 +80,7 @@ extension AlbumVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout 
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         viewModel.input.loadMore.onNext(indexPath.row)
+        viewModel.nextIndexPublisher.onNext(indexPath.row)
         if let albumCell = cell as? AlbumCell {
             albumCell.player?.play()
         }
