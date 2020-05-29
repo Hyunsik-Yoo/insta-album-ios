@@ -26,7 +26,7 @@ class AlbumViewModel: BaseViewModel {
     let showAlertPublisher = PublishSubject<(String, String)>()
     let showNextPublisher = PublishSubject<Int>()
     
-    let nextIndexPublisher = PublishSubject<Int>()
+    let nextIndexPublisher = BehaviorSubject(value: 0)
     let nextTokenPublisher = PublishSubject<String>()
     
     init(instagramService: InstagramServiceProtocol,
