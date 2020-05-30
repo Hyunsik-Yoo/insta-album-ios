@@ -77,7 +77,7 @@
 		6E163A622476494B00FED2E3 /* Cursor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cursor.swift; sourceTree = "<group>"; };
 		6E163A6524764D8B00FED2E3 /* AlbumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumVC.swift; sourceTree = "<group>"; };
 		6E163A6724764D9F00FED2E3 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
-		6E3E57542474ECAA006DA85E /* insta-album-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "insta-album-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E3E57542474ECAA006DA85E /* 인별앨범.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "인별앨범.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3E57572474ECAA006DA85E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E3E57592474ECAA006DA85E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6E3E575B2474ECAA006DA85E /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -210,7 +210,7 @@
 		6E3E57552474ECAA006DA85E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6E3E57542474ECAA006DA85E /* insta-album-ios.app */,
+				6E3E57542474ECAA006DA85E /* 인별앨범.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -343,7 +343,7 @@
 			);
 			name = "insta-album-ios";
 			productName = instaAlbum;
-			productReference = 6E3E57542474ECAA006DA85E /* insta-album-ios.app */;
+			productReference = 6E3E57542474ECAA006DA85E /* 인별앨범.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -653,7 +653,7 @@
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "macgongmon.insta-album-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "인별앨범";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -700,7 +700,7 @@
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "macgongmon.insta-album-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "인별앨범";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
