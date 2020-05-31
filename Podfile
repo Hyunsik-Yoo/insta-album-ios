@@ -16,10 +16,8 @@ target 'insta-album-ios' do
   pod 'Alamofire', '~> 4.9.1'
   pod 'AlamofireNetworkActivityLogger', '~> 2.4'
 
-  pod 'FacebookSDK'
-  pod 'FacebookSDK/LoginKit'
-  pod 'FacebookSDK/ShareKit'
-  pod 'FacebookSDK/PlacesKit'
-  pod 'FBSDKMessengerShareKit'
+  pod 'FBSDKCoreKit', '~> 7.0.0'
+  pod 'FBSDKLoginKit', '~> 7.0.0'
+  pod 'FBSDKShareKit', '~> 7.0.0'
 
 end
