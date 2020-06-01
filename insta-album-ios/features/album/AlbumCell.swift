@@ -1,9 +1,15 @@
 import UIKit
 import AVKit
 
+
+protocol AlbumCellDelegate: class {
+    func onFinishVideo()
+}
+
 class AlbumCell: BaseCollectionViewCell {
     static let registerId = "\(AlbumCell.self)"
     
+    weak var delegate: AlbumCellDelegate?
     
     var player: AVPlayer? = nil
     
@@ -17,6 +23,7 @@ class AlbumCell: BaseCollectionViewCell {
         backgroundColor = .clear
         addSubViews(imageView)
     }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
@@ -42,6 +49,17 @@ class AlbumCell: BaseCollectionViewCell {
                 self.imageView.setImage(urlString: media.media_url)
             }
         }
+    }
+    
+    func startVideo() {
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying), name: .AVPlayerItemDidPlayToEndTime, object: nil)
+        player?.play()
+    }
+    
+    @objc
+    func playerDidFinishPlaying(note: NSNotification) {
+        self.delegate?.onFinishVideo()
+        NotificationCenter.default.removeObserver(self)
     }
     
     private func setupAVPlayer(videoURL: String) {

@@ -6,8 +6,10 @@ class HomeVC: BaseVC {
     private var viewModel = HomeViewModel(instagramService: InstagramServices(),
                                           userDefaults: UserDefaultsUtils())
     
-    static func instance() -> HomeVC {
-        return HomeVC(nibName: nil, bundle: nil)
+    static func instance() -> UINavigationController {
+        let controller = HomeVC(nibName: nil, bundle: nil)
+        
+        return UINavigationController(rootViewController: controller)
     }
     
     override func viewDidLoad() {
@@ -33,7 +35,7 @@ class HomeVC: BaseVC {
     }
     
     private func setupNavigation() {
-        title = "인스타 앨범"
+        title = "전체 앨범 보기"
         
         self.navigationController?.isNavigationBarHidden = false
     }

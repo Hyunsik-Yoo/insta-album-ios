@@ -5,8 +5,13 @@ import RxCocoa
 class AlbumVC: BaseVC {
     
     private lazy var albumView = AlbumView(frame: self.view.frame)
+    private lazy var controllerView = ControllerView(frame: self.view.frame).then {
+        $0.alpha = 0
+    }
     private var viewModel = AlbumViewModel(instagramService: InstagramServices(),
                                            userDefaults: UserDefaultsUtils())
+    
+    var timer: Timer? = nil
     
     static func instance() -> UINavigationController {
         let controller = AlbumVC(nibName: nil, bundle: nil)
@@ -17,7 +22,7 @@ class AlbumVC: BaseVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view = albumView
+        view.addSubViews(albumView, controllerView)
         
         setupCollectionView()
         viewModel.fetchAlbum()
@@ -29,13 +34,29 @@ class AlbumVC: BaseVC {
     }
     
     override func bindEvent() {
-        albumView.totalBtn.rx.tap.bind(onNext: goToHome)
+        albumView.tapGesture.rx.event.bind { [weak self] (_) in
+            guard let self = self else { return }
+            self.showControllerView()
+        }.disposed(by: disposeBag)
+        controllerView.tapGesture.rx.event.bind { [weak self] (_) in
+            guard let self = self else { return }
+            self.showControllerView()
+        }.disposed(by: disposeBag)
+        controllerView.totalBtn.rx.tap.bind(onNext: showControllerView)
+            .disposed(by: disposeBag)
+        
+        // ControllerView
+        controllerView.totalBtn.rx.tap.bind(onNext: showHome)
+            .disposed(by: disposeBag)
+        controllerView.settingBtn.rx.tap.bind(onNext: showSetting)
             .disposed(by: disposeBag)
     }
     
     override func bindViewModel() {
-        viewModel.output.medias.bind(to: albumView.collectionView.rx.items(cellIdentifier: AlbumCell.registerId, cellType: AlbumCell.self)) { row, media, cell in
+        viewModel.output.medias.bind(to: albumView.collectionView.rx.items(cellIdentifier: AlbumCell.registerId, cellType: AlbumCell.self)) { [weak self] row, media, cell in
+            guard let self = self else { return }
             cell.bind(media: media)
+            cell.delegate = self
         }.disposed(by: disposeBag)
         viewModel.output.showAlert.bind { [weak self] (title, message) in
             guard let self = self else { return }
@@ -58,6 +79,17 @@ class AlbumVC: BaseVC {
         return true
     }
     
+    private func showControllerView() {
+        UIView.animate(withDuration: 0.5) { [weak self] in
+            guard let self = self else { return }
+            if self.controllerView.alpha == 0 {
+                self.controllerView.alpha = 1
+            } else {
+                self.controllerView.alpha =  0
+            }
+        }
+    }
+    
     private func setupNavigation() {
         navigationController?.isNavigationBarHidden = true
     }
@@ -68,8 +100,12 @@ class AlbumVC: BaseVC {
             .disposed(by: disposeBag)
     }
     
-    private func goToHome() {
-        navigationController?.pushViewController(HomeVC.instance(), animated: true)
+    private func showHome() {
+        self.present(HomeVC.instance(), animated: true, completion: nil)
+    }
+    
+    private func showSetting() {
+        self.present(SettingVC.instance(), animated: true, completion: nil)
     }
 }
 
@@ -79,10 +115,19 @@ extension AlbumVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout 
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        timer?.invalidate()
         viewModel.input.loadMore.onNext(indexPath.row)
         viewModel.nextIndexPublisher.onNext(indexPath.row)
         if let albumCell = cell as? AlbumCell {
-            albumCell.player?.play()
+            if let _ = albumCell.player {
+                albumCell.startVideo()
+            } else {
+                // 사진일 경우 몇초 뒤에
+                timer = Timer.scheduledTimer(withTimeInterval: 5, repeats: false) { [weak self] (_) in
+                    guard let self = self else { return }
+                    self.viewModel.input.requestNext.onNext(())
+                }
+            }
         }
     }
     
@@ -90,5 +135,11 @@ extension AlbumVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout 
         if let albumCell = cell as? AlbumCell {
             albumCell.player?.pause()
         }
+    }
+}
+
+extension AlbumVC: AlbumCellDelegate {
+    func onFinishVideo() {
+        self.viewModel.input.requestNext.onNext(())
     }
 }

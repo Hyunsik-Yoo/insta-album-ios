@@ -62,6 +62,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = AlbumVC.instance()
         window?.makeKeyAndVisible()
     }
+    
+    func goToSignIn() {
+        window?.rootViewController = SignInVC.instance()
+        window?.makeKeyAndVisible()
+    }
 
 }
 

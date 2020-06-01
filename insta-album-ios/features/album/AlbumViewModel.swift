@@ -10,6 +10,7 @@ class AlbumViewModel: BaseViewModel {
     
     struct Input {
         var loadMore: AnyObserver<Int>
+        var requestNext: AnyObserver<Void>
     }
     
     struct Output {
@@ -20,6 +21,7 @@ class AlbumViewModel: BaseViewModel {
     }
     
     let loadMorePublisher = PublishSubject<Int>()
+    let requestNextPublisher = PublishSubject<Void>()
     let mediasPublisher = PublishSubject<[Media]>()
     
     let showLoadingPublisher = PublishSubject<Bool>()
@@ -29,12 +31,14 @@ class AlbumViewModel: BaseViewModel {
     let nextIndexPublisher = BehaviorSubject(value: 0)
     let nextTokenPublisher = PublishSubject<String>()
     
+    
     init(instagramService: InstagramServiceProtocol,
          userDefaults: UserDefaultsUtils) {
         self.instagramService = instagramService
         self.userDefaults = userDefaults
         
-        input = Input(loadMore: loadMorePublisher.asObserver())
+        input = Input(loadMore: loadMorePublisher.asObserver(),
+                      requestNext: requestNextPublisher.asObserver())
         output = Output(medias: mediasPublisher,
                         showLoading: showLoadingPublisher,
                         showAlert: showAlertPublisher,
@@ -60,20 +64,16 @@ class AlbumViewModel: BaseViewModel {
             }
         }.disposed(by: disposeBag)
         
-        Observable<Int>.interval(.seconds(5), scheduler: MainScheduler.instance)
-            .withLatestFrom(Observable.combineLatest(nextIndexPublisher, mediasPublisher)).bind { [weak self] (index, medias) in
-                guard let self = self else { return }
-                
-                if index >= medias.count {
-                    self.nextIndexPublisher.onNext(0)
-                    self.showNextPublisher.onNext(0)
-                } else {
-                    self.nextIndexPublisher.onNext(index + 1)
-                    self.showNextPublisher.onNext(index + 1)
-                }
+        requestNextPublisher.withLatestFrom(Observable.combineLatest(nextIndexPublisher, mediasPublisher)).bind { [weak self] (index, medias) in
+            guard let self = self else { return }
+            if index >= medias.count {
+                self.nextIndexPublisher.onNext(0)
+                self.showNextPublisher.onNext(0)
+            } else {
+                self.nextIndexPublisher.onNext(index + 1)
+                self.showNextPublisher.onNext(index + 1)
+            }
         }.disposed(by: disposeBag)
-        
-        
     }
     
     func fetchAlbum() {

@@ -30,4 +30,9 @@ struct UserDefaultsUtils {
     func getID() -> Int? {
         return instance.integer(forKey: UserDefaultsUtils.KEY_ID)
     }
+    
+    func clear() {
+        instance.removeObject(forKey: UserDefaultsUtils.KEY_ID)
+        instance.removeObject(forKey: UserDefaultsUtils.KEY_TOKEN)
+    }
 }

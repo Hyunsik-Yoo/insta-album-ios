@@ -3,12 +3,19 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 53;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4DF227FDD47886208A6798B4 /* Pods_insta_album_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AD76EFE9AC1F918DD25FEAF /* Pods_insta_album_ios.framework */; };
+		19E60A920CC4CEC7F752DDB1 /* Pods_insta_album_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4FD629231CBEBC90B34CCE /* Pods_insta_album_ios.framework */; };
 		6E0877422480A22200BCF155 /* Ghanachocolate.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E0877412480A22200BCF155 /* Ghanachocolate.otf */; };
+		6E0877452480A8FA00BCF155 /* ControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0877442480A8FA00BCF155 /* ControllerView.swift */; };
+		6E0877482480D21400BCF155 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0877472480D21400BCF155 /* SettingView.swift */; };
+		6E08774A2480D79300BCF155 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0877492480D79300BCF155 /* SettingVC.swift */; };
+		6E08774C2480D8E700BCF155 /* InstaUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08774B2480D8E700BCF155 /* InstaUser.swift */; };
+		6E08774E2480F5C900BCF155 /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08774D2480F5C900BCF155 /* SettingViewModel.swift */; };
+		6E0877502481039600BCF155 /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E08774F2481039600BCF155 /* SettingCell.swift */; };
+		6E087752248103B400BCF155 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E087751248103B400BCF155 /* BaseTableViewCell.swift */; };
 		6E163A5F247648B200FED2E3 /* InstagramResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E163A5E247648B200FED2E3 /* InstagramResponse.swift */; };
 		6E163A612476491E00FED2E3 /* Paging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E163A602476491E00FED2E3 /* Paging.swift */; };
 		6E163A632476494B00FED2E3 /* Cursor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E163A622476494B00FED2E3 /* Cursor.swift */; };
@@ -32,10 +39,6 @@
 		6E5B0F00247525AF00AFC621 /* JsonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5B0EFF247525AF00AFC621 /* JsonUtils.swift */; };
 		6E5B0F03247525C500AFC621 /* InstagramToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5B0F02247525C500AFC621 /* InstagramToken.swift */; };
 		6E5B0F052475265B00AFC621 /* CommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5B0F042475265B00AFC621 /* CommonError.swift */; };
-		6E5B0F0A2475281C00AFC621 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5B0F062475281C00AFC621 /* Bolts.framework */; };
-		6E5B0F0B2475281C00AFC621 /* FBSDKLoginKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5B0F072475281C00AFC621 /* FBSDKLoginKit.framework */; };
-		6E5B0F0C2475281C00AFC621 /* FBSDKCoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5B0F082475281C00AFC621 /* FBSDKCoreKit.framework */; };
-		6E5B0F0D2475281C00AFC621 /* FBSDKShareKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5B0F092475281C00AFC621 /* FBSDKShareKit.framework */; };
 		6E8CAE4624778B9E00CE8800 /* LongLiveToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8CAE4524778B9E00CE8800 /* LongLiveToken.swift */; };
 		6EC3C8FF2477A26C00FBA081 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC3C8FE2477A26C00FBA081 /* AlbumCell.swift */; };
 		6EC3C9012477A40900FBA081 /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC3C9002477A40900FBA081 /* AlbumViewModel.swift */; };
@@ -53,17 +56,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0B2828B92DE3A347EC1F03F1 /* Pods-instaAlbum.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaAlbum.release.xcconfig"; path = "Target Support Files/Pods-instaAlbum/Pods-instaAlbum.release.xcconfig"; sourceTree = "<group>"; };
-		0B5D8C6B5B517129205CC3DA /* Pods-instaAlbum.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-instaAlbum.debug.xcconfig"; path = "Target Support Files/Pods-instaAlbum/Pods-instaAlbum.debug.xcconfig"; sourceTree = "<group>"; };
-		122127DAB119577B11BF6E56 /* Pods-insta-album-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta-album-ios.debug.xcconfig"; path = "Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios.debug.xcconfig"; sourceTree = "<group>"; };
-		4AD76EFE9AC1F918DD25FEAF /* Pods_insta_album_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_insta_album_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E0877412480A22200BCF155 /* Ghanachocolate.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ghanachocolate.otf; sourceTree = "<group>"; };
+		6E0877442480A8FA00BCF155 /* ControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerView.swift; sourceTree = "<group>"; };
+		6E0877472480D21400BCF155 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
+		6E0877492480D79300BCF155 /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
+		6E08774B2480D8E700BCF155 /* InstaUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaUser.swift; sourceTree = "<group>"; };
+		6E08774D2480F5C900BCF155 /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
+		6E08774F2481039600BCF155 /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		6E087751248103B400BCF155 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		6E163A5E247648B200FED2E3 /* InstagramResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramResponse.swift; sourceTree = "<group>"; };
 		6E163A602476491E00FED2E3 /* Paging.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paging.swift; sourceTree = "<group>"; };
 		6E163A622476494B00FED2E3 /* Cursor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cursor.swift; sourceTree = "<group>"; };
 		6E163A6524764D8B00FED2E3 /* AlbumVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumVC.swift; sourceTree = "<group>"; };
 		6E163A6724764D9F00FED2E3 /* AlbumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
-		6E3E57542474ECAA006DA85E /* insta-album-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "insta-album-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6E3E57542474ECAA006DA85E /* 인별앨범.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "인별앨범.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E3E57572474ECAA006DA85E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6E3E57592474ECAA006DA85E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		6E3E575B2474ECAA006DA85E /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -83,10 +89,6 @@
 		6E5B0EFF247525AF00AFC621 /* JsonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUtils.swift; sourceTree = "<group>"; };
 		6E5B0F02247525C500AFC621 /* InstagramToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramToken.swift; sourceTree = "<group>"; };
 		6E5B0F042475265B00AFC621 /* CommonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
-		6E5B0F062475281C00AFC621 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		6E5B0F072475281C00AFC621 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		6E5B0F082475281C00AFC621 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		6E5B0F092475281C00AFC621 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		6E8CAE4524778B9E00CE8800 /* LongLiveToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongLiveToken.swift; sourceTree = "<group>"; };
 		6EC3C8FE2477A26C00FBA081 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		6EC3C9002477A40900FBA081 /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
@@ -101,7 +103,9 @@
 		6EEBD53B247640AF0002F9E9 /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 		6EEBD53D247640EF0002F9E9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6EEBD53F247641710002F9E9 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
-		A38781346F00C13E188B5959 /* Pods-insta-album-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta-album-ios.release.xcconfig"; path = "Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios.release.xcconfig"; sourceTree = "<group>"; };
+		9224855267A11B9F3DAB3028 /* Pods-insta-album-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta-album-ios.debug.xcconfig"; path = "Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		A79593E0330C76B548ECF3CF /* Pods-insta-album-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta-album-ios.release.xcconfig"; path = "Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios.release.xcconfig"; sourceTree = "<group>"; };
+		AF4FD629231CBEBC90B34CCE /* Pods_insta_album_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_insta_album_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,11 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E5B0F0C2475281C00AFC621 /* FBSDKCoreKit.framework in Frameworks */,
-				6E5B0F0D2475281C00AFC621 /* FBSDKShareKit.framework in Frameworks */,
-				6E5B0F0A2475281C00AFC621 /* Bolts.framework in Frameworks */,
-				6E5B0F0B2475281C00AFC621 /* FBSDKLoginKit.framework in Frameworks */,
-				4DF227FDD47886208A6798B4 /* Pods_insta_album_ios.framework in Frameworks */,
+				19E60A920CC4CEC7F752DDB1 /* Pods_insta_album_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,10 +123,8 @@
 		0D741D0B9C67BBC7C03E0CC8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				0B5D8C6B5B517129205CC3DA /* Pods-instaAlbum.debug.xcconfig */,
-				0B2828B92DE3A347EC1F03F1 /* Pods-instaAlbum.release.xcconfig */,
-				122127DAB119577B11BF6E56 /* Pods-insta-album-ios.debug.xcconfig */,
-				A38781346F00C13E188B5959 /* Pods-insta-album-ios.release.xcconfig */,
+				9224855267A11B9F3DAB3028 /* Pods-insta-album-ios.debug.xcconfig */,
+				A79593E0330C76B548ECF3CF /* Pods-insta-album-ios.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -134,11 +132,7 @@
 		19A1BD28E95A471C907F9005 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6E5B0F062475281C00AFC621 /* Bolts.framework */,
-				6E5B0F082475281C00AFC621 /* FBSDKCoreKit.framework */,
-				6E5B0F072475281C00AFC621 /* FBSDKLoginKit.framework */,
-				6E5B0F092475281C00AFC621 /* FBSDKShareKit.framework */,
-				4AD76EFE9AC1F918DD25FEAF /* Pods_insta_album_ios.framework */,
+				AF4FD629231CBEBC90B34CCE /* Pods_insta_album_ios.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -159,13 +153,26 @@
 			path = font;
 			sourceTree = "<group>";
 		};
+		6E0877462480D20900BCF155 /* setting */ = {
+			isa = PBXGroup;
+			children = (
+				6E0877472480D21400BCF155 /* SettingView.swift */,
+				6E0877492480D79300BCF155 /* SettingVC.swift */,
+				6E08774D2480F5C900BCF155 /* SettingViewModel.swift */,
+				6E08774F2481039600BCF155 /* SettingCell.swift */,
+			);
+			path = setting;
+			sourceTree = "<group>";
+		};
 		6E163A6424764D7F00FED2E3 /* album */ = {
 			isa = PBXGroup;
 			children = (
+				6E0877462480D20900BCF155 /* setting */,
 				6E163A6524764D8B00FED2E3 /* AlbumVC.swift */,
 				6E163A6724764D9F00FED2E3 /* AlbumView.swift */,
 				6EC3C8FE2477A26C00FBA081 /* AlbumCell.swift */,
 				6EC3C9002477A40900FBA081 /* AlbumViewModel.swift */,
+				6E0877442480A8FA00BCF155 /* ControllerView.swift */,
 			);
 			path = album;
 			sourceTree = "<group>";
@@ -183,7 +190,7 @@
 		6E3E57552474ECAA006DA85E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6E3E57542474ECAA006DA85E /* insta-album-ios.app */,
+				6E3E57542474ECAA006DA85E /* 인별앨범.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -234,6 +241,7 @@
 				6E3E577224750AFD006DA85E /* BaseVC.swift */,
 				6E3E577424750B12006DA85E /* BaseViewModel.swift */,
 				6EEBD539247640880002F9E9 /* BaseCollectionViewCell.swift */,
+				6E087751248103B400BCF155 /* BaseTableViewCell.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -280,6 +288,7 @@
 				6E163A5E247648B200FED2E3 /* InstagramResponse.swift */,
 				6E163A602476491E00FED2E3 /* Paging.swift */,
 				6E163A622476494B00FED2E3 /* Cursor.swift */,
+				6E08774B2480D8E700BCF155 /* InstaUser.swift */,
 			);
 			path = modal;
 			sourceTree = "<group>";
@@ -302,11 +311,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E3E57682474ECAD006DA85E /* Build configuration list for PBXNativeTarget "insta-album-ios" */;
 			buildPhases = (
-				28269B258016D784288AC82E /* [CP] Check Pods Manifest.lock */,
+				3F19BB80CAECC4757EC687A6 /* [CP] Check Pods Manifest.lock */,
 				6E3E57502474ECAA006DA85E /* Sources */,
 				6E3E57512474ECAA006DA85E /* Frameworks */,
 				6E3E57522474ECAA006DA85E /* Resources */,
-				1D8C714391EB79A06FC549B1 /* [CP] Embed Pods Frameworks */,
+				56C600C766C0E0EABC11E98F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -314,7 +323,7 @@
 			);
 			name = "insta-album-ios";
 			productName = instaAlbum;
-			productReference = 6E3E57542474ECAA006DA85E /* insta-album-ios.app */;
+			productReference = 6E3E57542474ECAA006DA85E /* 인별앨범.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -333,7 +342,7 @@
 				};
 			};
 			buildConfigurationList = 6E3E574F2474ECAA006DA85E /* Build configuration list for PBXProject "insta-album-ios" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 11.4";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -364,24 +373,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1D8C714391EB79A06FC549B1 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		28269B258016D784288AC82E /* [CP] Check Pods Manifest.lock */ = {
+		3F19BB80CAECC4757EC687A6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -403,6 +395,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		56C600C766C0E0EABC11E98F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -412,9 +421,13 @@
 			files = (
 				6EEBD52D247609560002F9E9 /* InstaSignInViewModel.swift in Sources */,
 				6E5B0EFB2475223500AFC621 /* InstagramServices.swift in Sources */,
+				6E0877452480A8FA00BCF155 /* ControllerView.swift in Sources */,
 				6E5B0EFE2475246000AFC621 /* HTTPUtils.swift in Sources */,
+				6E087752248103B400BCF155 /* BaseTableViewCell.swift in Sources */,
+				6E0877482480D21400BCF155 /* SettingView.swift in Sources */,
 				6EC3C9012477A40900FBA081 /* AlbumViewModel.swift in Sources */,
 				6E5B0F03247525C500AFC621 /* InstagramToken.swift in Sources */,
+				6E08774C2480D8E700BCF155 /* InstaUser.swift in Sources */,
 				6E5B0EF624750E6200AFC621 /* InstaSignInView.swift in Sources */,
 				6E163A632476494B00FED2E3 /* Cursor.swift in Sources */,
 				6EEBD540247641710002F9E9 /* Media.swift in Sources */,
@@ -433,6 +446,7 @@
 				6E163A6624764D8B00FED2E3 /* AlbumVC.swift in Sources */,
 				6EEBD53224761F260002F9E9 /* HomeView.swift in Sources */,
 				6EC3C8FF2477A26C00FBA081 /* AlbumCell.swift in Sources */,
+				6E08774A2480D79300BCF155 /* SettingVC.swift in Sources */,
 				6E5B0EF824750F4100AFC621 /* InstaSignInVC.swift in Sources */,
 				6E163A6824764D9F00FED2E3 /* AlbumView.swift in Sources */,
 				6EEBD53A247640880002F9E9 /* BaseCollectionViewCell.swift in Sources */,
@@ -441,8 +455,10 @@
 				6E3E577724750B29006DA85E /* UIViewExt.swift in Sources */,
 				6EEBD53E247640EF0002F9E9 /* HomeViewModel.swift in Sources */,
 				6E163A5F247648B200FED2E3 /* InstagramResponse.swift in Sources */,
+				6E08774E2480F5C900BCF155 /* SettingViewModel.swift in Sources */,
 				6E3E577124750AEB006DA85E /* BaseView.swift in Sources */,
 				6E3E576D247508B8006DA85E /* UIColoExt.swift in Sources */,
+				6E0877502481039600BCF155 /* SettingCell.swift in Sources */,
 				6E3E575A2474ECAA006DA85E /* SceneDelegate.swift in Sources */,
 				6E5B0F052475265B00AFC621 /* CommonError.swift in Sources */,
 			);
@@ -578,16 +594,18 @@
 		};
 		6E3E57692474ECAD006DA85E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 122127DAB119577B11BF6E56 /* Pods-insta-album-ios.debug.xcconfig */;
+			baseConfigurationReference = 9224855267A11B9F3DAB3028 /* Pods-insta-album-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = X975A2HM62;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "insta-album-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -617,24 +635,26 @@
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "macgongmon.insta-album-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "인별앨범";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		6E3E576A2474ECAD006DA85E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A38781346F00C13E188B5959 /* Pods-insta-album-ios.release.xcconfig */;
+			baseConfigurationReference = A79593E0330C76B548ECF3CF /* Pods-insta-album-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = X975A2HM62;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "insta-album-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -664,9 +684,9 @@
 					"-ObjC",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "macgongmon.insta-album-ios";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "인별앨범";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

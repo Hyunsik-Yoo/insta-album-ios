@@ -6,13 +6,13 @@ import Foundation
 class SignInView: BaseView {
     
     let titleLabel = UILabel().then {
-        $0.text = "인별액자"
+        $0.text = "인별앨범"
         $0.textColor = .black
         $0.font = UIFont(name: "Ghanachocolate", size: 50)
     }
     
     let descLabel = UILabel().then {
-        $0.text = "내 인스타그램 사진을\n액자로 활용해보세요."
+        $0.text = "내 인스타그램 사진을\n액범으로 활용해보세요."
         $0.textColor = .black
         $0.alpha = 0.8
         $0.numberOfLines = 2
