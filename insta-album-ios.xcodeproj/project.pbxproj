@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2564436147BC4874512E0110 /* Pods_insta_album_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDBC125D466EEECCFFF2D53D /* Pods_insta_album_ios.framework */; };
+		19E60A920CC4CEC7F752DDB1 /* Pods_insta_album_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF4FD629231CBEBC90B34CCE /* Pods_insta_album_ios.framework */; };
 		6E0877422480A22200BCF155 /* Ghanachocolate.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6E0877412480A22200BCF155 /* Ghanachocolate.otf */; };
 		6E0877452480A8FA00BCF155 /* ControllerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0877442480A8FA00BCF155 /* ControllerView.swift */; };
 		6E0877482480D21400BCF155 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E0877472480D21400BCF155 /* SettingView.swift */; };
@@ -39,7 +39,6 @@
 		6E5B0F00247525AF00AFC621 /* JsonUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5B0EFF247525AF00AFC621 /* JsonUtils.swift */; };
 		6E5B0F03247525C500AFC621 /* InstagramToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5B0F02247525C500AFC621 /* InstagramToken.swift */; };
 		6E5B0F052475265B00AFC621 /* CommonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E5B0F042475265B00AFC621 /* CommonError.swift */; };
-		6E5B0F0A2475281C00AFC621 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E5B0F062475281C00AFC621 /* Bolts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		6E8CAE4624778B9E00CE8800 /* LongLiveToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E8CAE4524778B9E00CE8800 /* LongLiveToken.swift */; };
 		6EC3C8FF2477A26C00FBA081 /* AlbumCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC3C8FE2477A26C00FBA081 /* AlbumCell.swift */; };
 		6EC3C9012477A40900FBA081 /* AlbumViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EC3C9002477A40900FBA081 /* AlbumViewModel.swift */; };
@@ -57,7 +56,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		4A017685D11B1E0EE407DE62 /* Pods-insta-album-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta-album-ios.debug.xcconfig"; path = "Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		6E0877412480A22200BCF155 /* Ghanachocolate.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ghanachocolate.otf; sourceTree = "<group>"; };
 		6E0877442480A8FA00BCF155 /* ControllerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerView.swift; sourceTree = "<group>"; };
 		6E0877472480D21400BCF155 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
@@ -91,10 +89,6 @@
 		6E5B0EFF247525AF00AFC621 /* JsonUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JsonUtils.swift; sourceTree = "<group>"; };
 		6E5B0F02247525C500AFC621 /* InstagramToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstagramToken.swift; sourceTree = "<group>"; };
 		6E5B0F042475265B00AFC621 /* CommonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonError.swift; sourceTree = "<group>"; };
-		6E5B0F062475281C00AFC621 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
-		6E5B0F072475281C00AFC621 /* FBSDKLoginKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKLoginKit.framework; sourceTree = "<group>"; };
-		6E5B0F082475281C00AFC621 /* FBSDKCoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKCoreKit.framework; sourceTree = "<group>"; };
-		6E5B0F092475281C00AFC621 /* FBSDKShareKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBSDKShareKit.framework; sourceTree = "<group>"; };
 		6E8CAE4524778B9E00CE8800 /* LongLiveToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongLiveToken.swift; sourceTree = "<group>"; };
 		6EC3C8FE2477A26C00FBA081 /* AlbumCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumCell.swift; sourceTree = "<group>"; };
 		6EC3C9002477A40900FBA081 /* AlbumViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewModel.swift; sourceTree = "<group>"; };
@@ -109,8 +103,9 @@
 		6EEBD53B247640AF0002F9E9 /* UIImageViewExt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExt.swift; sourceTree = "<group>"; };
 		6EEBD53D247640EF0002F9E9 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6EEBD53F247641710002F9E9 /* Media.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Media.swift; sourceTree = "<group>"; };
-		B6B167DE6AC0F8A268FE0C2B /* Pods-insta-album-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta-album-ios.release.xcconfig"; path = "Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios.release.xcconfig"; sourceTree = "<group>"; };
-		EDBC125D466EEECCFFF2D53D /* Pods_insta_album_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_insta_album_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9224855267A11B9F3DAB3028 /* Pods-insta-album-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta-album-ios.debug.xcconfig"; path = "Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios.debug.xcconfig"; sourceTree = "<group>"; };
+		A79593E0330C76B548ECF3CF /* Pods-insta-album-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-insta-album-ios.release.xcconfig"; path = "Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios.release.xcconfig"; sourceTree = "<group>"; };
+		AF4FD629231CBEBC90B34CCE /* Pods_insta_album_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_insta_album_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,8 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E5B0F0A2475281C00AFC621 /* Bolts.framework in Frameworks */,
-				2564436147BC4874512E0110 /* Pods_insta_album_ios.framework in Frameworks */,
+				19E60A920CC4CEC7F752DDB1 /* Pods_insta_album_ios.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -129,8 +123,8 @@
 		0D741D0B9C67BBC7C03E0CC8 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4A017685D11B1E0EE407DE62 /* Pods-insta-album-ios.debug.xcconfig */,
-				B6B167DE6AC0F8A268FE0C2B /* Pods-insta-album-ios.release.xcconfig */,
+				9224855267A11B9F3DAB3028 /* Pods-insta-album-ios.debug.xcconfig */,
+				A79593E0330C76B548ECF3CF /* Pods-insta-album-ios.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -138,11 +132,7 @@
 		19A1BD28E95A471C907F9005 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6E5B0F062475281C00AFC621 /* Bolts.framework */,
-				6E5B0F082475281C00AFC621 /* FBSDKCoreKit.framework */,
-				6E5B0F072475281C00AFC621 /* FBSDKLoginKit.framework */,
-				6E5B0F092475281C00AFC621 /* FBSDKShareKit.framework */,
-				EDBC125D466EEECCFFF2D53D /* Pods_insta_album_ios.framework */,
+				AF4FD629231CBEBC90B34CCE /* Pods_insta_album_ios.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -321,11 +311,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6E3E57682474ECAD006DA85E /* Build configuration list for PBXNativeTarget "insta-album-ios" */;
 			buildPhases = (
-				C7050D6F1F03666A055B230D /* [CP] Check Pods Manifest.lock */,
+				3F19BB80CAECC4757EC687A6 /* [CP] Check Pods Manifest.lock */,
 				6E3E57502474ECAA006DA85E /* Sources */,
 				6E3E57512474ECAA006DA85E /* Frameworks */,
 				6E3E57522474ECAA006DA85E /* Resources */,
-				3FF9EDC48D8988046F725710 /* [CP] Embed Pods Frameworks */,
+				56C600C766C0E0EABC11E98F /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -383,24 +373,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		3FF9EDC48D8988046F725710 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C7050D6F1F03666A055B230D /* [CP] Check Pods Manifest.lock */ = {
+		3F19BB80CAECC4757EC687A6 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -420,6 +393,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		56C600C766C0E0EABC11E98F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-insta-album-ios/Pods-insta-album-ios-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -604,17 +594,18 @@
 		};
 		6E3E57692474ECAD006DA85E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4A017685D11B1E0EE407DE62 /* Pods-insta-album-ios.debug.xcconfig */;
+			baseConfigurationReference = 9224855267A11B9F3DAB3028 /* Pods-insta-album-ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = X975A2HM62;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "insta-album-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -652,17 +643,18 @@
 		};
 		6E3E576A2474ECAD006DA85E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6B167DE6AC0F8A268FE0C2B /* Pods-insta-album-ios.release.xcconfig */;
+			baseConfigurationReference = A79593E0330C76B548ECF3CF /* Pods-insta-album-ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = X975A2HM62;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "insta-album-ios/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
